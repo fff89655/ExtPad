@@ -1,0 +1,23 @@
+{
+  "name": "extpad",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "electron": "^22.0.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fff89655/ExtPad.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fff89655/ExtPad/issues"
+  },
+  "homepage": "https://github.com/fff89655/ExtPad#readme",
+  "scripts": {
+    "start": "electron ."
+  }
+}
