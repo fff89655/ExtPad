@@ -33,11 +33,11 @@ api.getWindowList(function(t){
       win.iconSrc = iconMap[win.type];
       winList.push(win);
     }
-    // for(let win of winList){
-    //     api.getWindowRect(win.handle, r=>{
-    //         win.rect = r;
-    //     });
-    // }
+    for(let win of winList){
+        api.getWindowRect(win.handle, r=>{
+            win.rect = r;
+        });
+    }
     winList.sort((a, b) => {
         return a.order > b.order ? 1 : -1;
     });
@@ -48,7 +48,7 @@ api.getWindowList(function(t){
 
 
 
-let appData = {winList:[]}
+let appData = {winList:[], screenSize:{width:2560,height:1440}}
 function initVue(){
   new Vue({
     el: '#app',

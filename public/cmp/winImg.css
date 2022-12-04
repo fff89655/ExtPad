@@ -1,0 +1,12 @@
+
+.winImg{
+    position:relative;
+    border:1px solid black;
+    width:40px;
+    height:40px;
+}
+.winImg .winRect{
+    background-color: rgba(46, 150, 174, 0.1);
+    position: absolute;
+    border:1px solid rgba(46, 150, 174, 1);
+}

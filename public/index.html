@@ -1,11 +1,13 @@
 <html>
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>simplistTemplate</title>
   <script src="lib/vue.js"></script>
-  <script src="index.js">
-</script>
+  <script src="index.js"></script>
+  <script src="cmp/winImg.js"></script>
+  <link rel="stylesheet" href="cmp/winImg.css">
+
   <style>
     *{
         font-family: 'PingFang SC','Microsoft YaHei','Helvetica Neue','Helvetica','Arial',sans-serif;
@@ -44,12 +46,15 @@
 </head>
 <body>
   <div id="app">
-    <div v-for="win in winList" class="winDiv" @click="onWinClick(win)">
-        <div class="titleDiv">
-            <image class="winIcon" v-bind:src="win.iconSrc"/>
-            <div class="title"><!--{{win.handle}} -->{{win.title}}</div>
+    <div>
+        <div v-for="win in winList" class="winDiv" @click="onWinClick(win)">
+            <div class="titleDiv">
+                <image class="winIcon" v-bind:src="win.iconSrc"/>
+                <div class="title" style="margin-right:5px;"><!--{{win.handle}} -->{{win.title}}</div>
+                <winimg :screen-size="screenSize" :rect="win.rect"></winimg>
+            </div>
+            <!-- <div v-if="win.rect.x" class="title">{{win.rect.x}} {{win.rect.y}} {{win.rect.width}} {{win.rect.height}}</div> -->
         </div>
-        <div v-if="win.rect.x" class="title">{{win.rect.x}} {{win.rect.y}} {{win.rect.width}} {{win.rect.height}}</div>
     </div>
   </div>
 
